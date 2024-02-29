@@ -1,5 +1,5 @@
 CC= gcc
-CFLAGS= -Wall -Werror -Wextra -std=c11
+CFLAGS= -Wall -Werror -Wextra -std=c11 -g
 MATH= s21_*.c
 OBJECTS= *.o
 TEST= ./unit_tests/s21_*.c 
