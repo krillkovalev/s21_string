@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(s21_trim1_func) {
   const char *src = "*Hello, beautiful World !**";
   const char *trim_chars = "*H!";
@@ -45,11 +44,9 @@ START_TEST(s21_trim5_func) {
 }
 END_TEST
 
-
 Suite *suite_s21_trim(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
-
 
   TCase *tc_trim = tcase_create("trim_func");
   suite_add_tcase(suite, tc_trim);
@@ -58,7 +55,6 @@ Suite *suite_s21_trim(void) {
   tcase_add_test(tc_trim, s21_trim3_func);
   tcase_add_test(tc_trim, s21_trim4_func);
   tcase_add_test(tc_trim, s21_trim5_func);
-
 
   return suite;
 }

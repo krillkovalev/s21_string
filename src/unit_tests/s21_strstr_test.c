@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(s21_strstr_func) {
   const char str1_1[100] = "He2llo,23";
   const char str1_2[100] = "";
@@ -22,17 +21,13 @@ START_TEST(s21_strstr_func) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_strstr(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
   TCase *tc_strstr = tcase_create("Strstr func");
   suite_add_tcase(suite, tc_strstr);
   tcase_add_test(tc_strstr, s21_strstr_func);
-
 
   return suite;
 }

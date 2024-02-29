@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(strncmp_1) {
   const char *str1 = "Hello World!";
   const char *str2 = "Hello World!";
@@ -73,11 +72,9 @@ START_TEST(strncmp_9) {
 }
 END_TEST
 
-
 Suite *suite_s21_strncmp(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
-
 
   TCase *tc_strncmp = tcase_create("strncmp_test");
   suite_add_tcase(suite, tc_strncmp);
@@ -90,8 +87,6 @@ Suite *suite_s21_strncmp(void) {
   tcase_add_test(tc_strncmp, strncmp_7);
   tcase_add_test(tc_strncmp, strncmp_8);
   tcase_add_test(tc_strncmp, strncmp_9);
- 
-
 
   return suite;
 }

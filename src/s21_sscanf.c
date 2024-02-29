@@ -538,6 +538,6 @@ long double s21_atold(const char* str) {
     cnt++;
   }
   a = floorl(a * (long double)pow(10, cnt)) / (long double)pow(10, cnt);
-  a *= sign; 
+  a *= sign;
   return a;
 }

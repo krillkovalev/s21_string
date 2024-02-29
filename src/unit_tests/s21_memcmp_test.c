@@ -32,8 +32,6 @@ START_TEST(memcmp_4) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_memcmp(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
@@ -44,7 +42,6 @@ Suite *suite_s21_memcmp(void) {
   tcase_add_test(tc_memcmp, memcmp_2);
   tcase_add_test(tc_memcmp, memcmp_3);
   tcase_add_test(tc_memcmp, memcmp_4);
-
 
   return suite;
 }

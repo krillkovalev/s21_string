@@ -29,7 +29,7 @@ Suite *suite_s21_strstr(void);
 Suite *suite_s21_strtok(void);
 Suite *suite_s21_lower(void);
 Suite *suite_s21_upper(void);
-Suite *suite_s21_trim(void); 
+Suite *suite_s21_trim(void);
 
 void run_testcase(Suite *testcase);
 

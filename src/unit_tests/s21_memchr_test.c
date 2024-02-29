@@ -80,8 +80,6 @@ START_TEST(memchr_10) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_memchr(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
@@ -98,7 +96,6 @@ Suite *suite_s21_memchr(void) {
   tcase_add_test(tc_memchr, memchr_8);
   tcase_add_test(tc_memchr, memchr_9);
   tcase_add_test(tc_memchr, memchr_10);
-
 
   return suite;
 }

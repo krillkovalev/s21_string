@@ -39,17 +39,13 @@ START_TEST(s21_strncat_func) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_strncat(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
   TCase *tc_strncat = tcase_create("Strncat func");
   suite_add_tcase(suite, tc_strncat);
   tcase_add_test(tc_strncat, s21_strncat_func);
-
 
   return suite;
 }

@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(memcpy_1) {
   char str1[] = "Привет, мир!";
   char str2[50];
@@ -90,8 +89,6 @@ START_TEST(memcpy_9) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_memcpy(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
@@ -107,7 +104,6 @@ Suite *suite_s21_memcpy(void) {
   tcase_add_test(tc_memcpy, memcpy_7);
   tcase_add_test(tc_memcpy, memcpy_8);
   tcase_add_test(tc_memcpy, memcpy_9);
-
 
   return suite;
 }

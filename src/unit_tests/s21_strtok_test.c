@@ -42,11 +42,9 @@ START_TEST(s21_strtok4_func) {
 }
 END_TEST
 
-
 Suite *suite_s21_strtok(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
-
 
   TCase *tc_strtok = tcase_create("strtok_func");
   suite_add_tcase(suite, tc_strtok);
@@ -54,7 +52,6 @@ Suite *suite_s21_strtok(void) {
   tcase_add_test(tc_strtok, s21_strtok2_func);
   tcase_add_test(tc_strtok, s21_strtok3_func);
   tcase_add_test(tc_strtok, s21_strtok4_func);
-
 
   return suite;
 }

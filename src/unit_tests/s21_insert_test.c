@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(s21_insert1_func) {
   const char *src = "Hello, world!";
   const char *str = "beautiful ";
@@ -105,7 +104,6 @@ Suite *suite_s21_insert(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
   TCase *tc_insert = tcase_create("insert_func");
   suite_add_tcase(suite, tc_insert);
   tcase_add_test(tc_insert, s21_insert1_func);
@@ -118,7 +116,6 @@ Suite *suite_s21_insert(void) {
   tcase_add_test(tc_insert, s21_insert8_func);
   tcase_add_test(tc_insert, s21_insert9_func);
   tcase_add_test(tc_insert, s21_insert10_func);
-
 
   return suite;
 }

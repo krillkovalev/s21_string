@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(s21_strncpy_func) {
   char dest_1[100] = "Hello, ";
   char dest_2[100] = "";
@@ -37,17 +36,13 @@ START_TEST(s21_strncpy_func) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_strncpy(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
   TCase *tc_strncpy = tcase_create("Strncpy func");
   suite_add_tcase(suite, tc_strncpy);
   tcase_add_test(tc_strncpy, s21_strncpy_func);
-
 
   return suite;
 }

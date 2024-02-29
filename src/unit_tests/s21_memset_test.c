@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(memset_test1) {
   char origin_src1[] = "12340";
   char s21_src1[] = "12340";
@@ -51,20 +50,17 @@ START_TEST(memset_test5) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_memset(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
- TCase *tc_memset = tcase_create("memset_test");
+  TCase *tc_memset = tcase_create("memset_test");
   suite_add_tcase(suite, tc_memset);
   tcase_add_test(tc_memset, memset_test1);
   tcase_add_test(tc_memset, memset_test2);
   tcase_add_test(tc_memset, memset_test3);
   tcase_add_test(tc_memset, memset_test4);
   tcase_add_test(tc_memset, memset_test5);
-
 
   return suite;
 }

@@ -1,6 +1,5 @@
 #include "s21_main_test.h"
 
-
 START_TEST(s21_strpbrk_func) {
   const char str1_1[100] = "He2llo,23";
   const char str1_2[100] = "";
@@ -23,17 +22,13 @@ START_TEST(s21_strpbrk_func) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_strpbrk(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
   TCase *tc_strpbrk = tcase_create("Strpbrk func");
   suite_add_tcase(suite, tc_strpbrk);
   tcase_add_test(tc_strpbrk, s21_strpbrk_func);
-
 
   return suite;
 }

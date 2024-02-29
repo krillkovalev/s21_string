@@ -22,17 +22,13 @@ START_TEST(s21_strcspn_func) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_strcspn(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
   TCase *tc_strcspn = tcase_create("Strcspn func");
   suite_add_tcase(suite, tc_strcspn);
   tcase_add_test(tc_strcspn, s21_strcspn_func);
-
 
   return suite;
 }

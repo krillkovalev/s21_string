@@ -262,7 +262,7 @@ START_TEST(other_sprintf_6) {
 END_TEST
 
 START_TEST(other_sprintf_7) {
-  char str1[BUFF_SIZE] = {0}; 
+  char str1[BUFF_SIZE] = {0};
   char str2[BUFF_SIZE] = {0};
 
   char *format = "%0.*i";
@@ -692,7 +692,7 @@ START_TEST(other_sprintf_41) {
 END_TEST
 
 START_TEST(other_sprintf_42) {
-  char str1[BUFF_SIZE] = {0}; 
+  char str1[BUFF_SIZE] = {0};
   char str2[BUFF_SIZE] = {0};
 
   char *format = "%#2x";
@@ -1480,7 +1480,7 @@ START_TEST(other_sprintf_109) {
 END_TEST
 
 START_TEST(other_sprintf_110) {
-  char str1[BUFF_SIZE] = {0}; 
+  char str1[BUFF_SIZE] = {0};
   char str2[BUFF_SIZE] = {0};
 
   ck_assert_int_eq(
@@ -1670,7 +1670,7 @@ START_TEST(other_sprintf_122) {
 END_TEST
 
 START_TEST(other_sprintf_123) {
-  char str1[BUFF_SIZE] = {0}; 
+  char str1[BUFF_SIZE] = {0};
   char str2[BUFF_SIZE] = {0};
   char format[] = "%1.1f";
 
@@ -1990,7 +1990,7 @@ START_TEST(other_sprintf_149) {
 END_TEST
 
 START_TEST(other_sprintf_150) {
-  char str1[BUFF_SIZE] = {0}; 
+  char str1[BUFF_SIZE] = {0};
   char str2[BUFF_SIZE] = {0};
   char format[] = "%E";
 
@@ -2474,17 +2474,18 @@ START_TEST(other_sprintf_173) {
 }
 END_TEST
 
-
-
 START_TEST(s21_sprintf_test1) {
   char str1[100] = {0};
   char str2[100] = {0};
-  void *p = (void*)0x3456;
+  void *p = (void *)0x3456;
   int n1, n2;
-  int r1 = sprintf(str1, "%d%o%s%c%i%e%f%E%g%u%x%G%X%n%p%%%s", 25, 342, "aboba", 'a', 123, 25.34, 4325.23434,
-  0.0000000123, 2.12345, 12345u, 8342, 0.0000456, 1235, &n1, p, "hello my friend");
-  int r2 = s21_sprintf(str2, "%d%o%s%c%i%e%f%E%g%u%x%G%X%n%p%%%s", 25, 342, "aboba", 'a',
-  123, 25.34, 4325.23434, 0.0000000123, 2.12345, 12345u, 8342, 0.0000456, 1235, &n2, p, "hello my friend");
+  int r1 = sprintf(str1, "%d%o%s%c%i%e%f%E%g%u%x%G%X%n%p%%%s", 25, 342, "aboba",
+                   'a', 123, 25.34, 4325.23434, 0.0000000123, 2.12345, 12345u,
+                   8342, 0.0000456, 1235, &n1, p, "hello my friend");
+  int r2 =
+      s21_sprintf(str2, "%d%o%s%c%i%e%f%E%g%u%x%G%X%n%p%%%s", 25, 342, "aboba",
+                  'a', 123, 25.34, 4325.23434, 0.0000000123, 2.12345, 12345u,
+                  8342, 0.0000456, 1235, &n2, p, "hello my friend");
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(n1, n2);
   ck_assert_int_eq(r1, r2);
@@ -2495,7 +2496,8 @@ START_TEST(s21_sprintf_test2) {
   char str1[100] = {0};
   char str2[100] = {0};
   int r1 = sprintf(str1, "%+-25.3d%25.15o%#10.f%015d", 252, 243, 256.34, 15);
-  int r2 = s21_sprintf(str2, "%+-25.3d%25.15o%#10.f%015d", 252, 243, 256.34, 15);
+  int r2 =
+      s21_sprintf(str2, "%+-25.3d%25.15o%#10.f%015d", 252, 243, 256.34, 15);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2504,8 +2506,10 @@ END_TEST
 START_TEST(s21_sprintf_test3) {
   char str1[100] = {0};
   char str2[100] = {0};
-  int r1 = sprintf(str1, "%#+34.10g%#.10x%#15.1o%25.10s", 25.3456, 1234, 4567, "HELLOMYDEARFRIEND");
-  int r2 = s21_sprintf(str2, "%#+34.10g%#.10x%#15.1o%25.10s", 25.3456, 1234, 4567, "HELLOMYDEARFRIEND");
+  int r1 = sprintf(str1, "%#+34.10g%#.10x%#15.1o%25.10s", 25.3456, 1234, 4567,
+                   "HELLOMYDEARFRIEND");
+  int r2 = s21_sprintf(str2, "%#+34.10g%#.10x%#15.1o%25.10s", 25.3456, 1234,
+                       4567, "HELLOMYDEARFRIEND");
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2514,9 +2518,11 @@ END_TEST
 START_TEST(s21_sprintf_test4) {
   char str1[100] = {0};
   char str2[100] = {0};
-  void *p = (void*)43252342;
-  int r1 = sprintf(str1, "%#24.e%-15.20i%20p%020u", 43253242.4342, 4567899, p, 43252342u);
-  int r2 = s21_sprintf(str2, "%#24.e%-15.20i%20p%020u", 43253242.4342, 4567899, p, 43252342u);
+  void *p = (void *)43252342;
+  int r1 = sprintf(str1, "%#24.e%-15.20i%20p%020u", 43253242.4342, 4567899, p,
+                   43252342u);
+  int r2 = s21_sprintf(str2, "%#24.e%-15.20i%20p%020u", 43253242.4342, 4567899,
+                       p, 43252342u);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
   char str3[50];
@@ -2532,10 +2538,12 @@ START_TEST(s21_sprintf_test_d) {
   char str1[1000] = {0};
   char str2[1000] = {0};
   short h = 34;
-  int r1 = sprintf(str1, "%-25.10d%-30.2d%10.12d%11d%*d%*.*d%+-25.*d%+10.2ld%-11.*hd",
-  253, 335, 1234, 34, 10, 25, 5, 15, 345, 5, 666, 456789l, 5, h);
-  int r2 = s21_sprintf(str2, "%-25.10d%-30.2d%10.12d%11d%*d%*.*d%+-25.*d%+10.2ld%-11.*hd",
-  253, 335, 1234, 34, 10, 25, 5, 15, 345, 5, 666, 456789l, 5, h);
+  int r1 = sprintf(
+      str1, "%-25.10d%-30.2d%10.12d%11d%*d%*.*d%+-25.*d%+10.2ld%-11.*hd", 253,
+      335, 1234, 34, 10, 25, 5, 15, 345, 5, 666, 456789l, 5, h);
+  int r2 = s21_sprintf(
+      str2, "%-25.10d%-30.2d%10.12d%11d%*d%*.*d%+-25.*d%+10.2ld%-11.*hd", 253,
+      335, 1234, 34, 10, 25, 5, 15, 345, 5, 666, 456789l, 5, h);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2547,9 +2555,10 @@ START_TEST(s21_sprintf_test_i) {
   short h = 34;
   long l = 2353423523424;
   int r1 = sprintf(str1, "%+50.i%-10.20i%10.i%012i%*.*i%-10.*i%+10.1li%*.25hi",
-  34567, 225, 5230, 125, 10, 5, 456, 10, 377, l, 12, h);
-  int r2 = s21_sprintf(str2, "%+50.i%-10.20i%10.i%012i%*.*i%-10.*i%+10.1li%*.25hi",
-  34567, 225, 5230, 125, 10, 5, 456, 10, 377, l, 12, h);
+                   34567, 225, 5230, 125, 10, 5, 456, 10, 377, l, 12, h);
+  int r2 =
+      s21_sprintf(str2, "%+50.i%-10.20i%10.i%012i%*.*i%-10.*i%+10.1li%*.25hi",
+                  34567, 225, 5230, 125, 10, 5, 456, 10, 377, l, 12, h);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2559,10 +2568,10 @@ START_TEST(s21_sprintf_test_c) {
   char str1[1000] = {0};
   char str2[1000] = {0};
   wint_t c1 = 'T', c2 = 'Z';
-  int r1 = sprintf(str1, "%10c%-10c%25c%-30c%25c%*c%2c%*c%lc%-50lc",
-  'a', 'e', 'f', 'R', 'Q', 10, 'P', 'L', 20, 'x', c1, c2);
-  int r2 = s21_sprintf(str2, "%10c%-10c%25c%-30c%25c%*c%2c%*c%lc%-50lc",
-  'a', 'e', 'f', 'R', 'Q', 10, 'P', 'L', 20, 'x', c1, c2);
+  int r1 = sprintf(str1, "%10c%-10c%25c%-30c%25c%*c%2c%*c%lc%-50lc", 'a', 'e',
+                   'f', 'R', 'Q', 10, 'P', 'L', 20, 'x', c1, c2);
+  int r2 = s21_sprintf(str2, "%10c%-10c%25c%-30c%25c%*c%2c%*c%lc%-50lc", 'a',
+                       'e', 'f', 'R', 'Q', 10, 'P', 'L', 20, 'x', c1, c2);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2571,22 +2580,24 @@ END_TEST
 START_TEST(s21_sprintf_test_e) {
   char str1[1000] = {0};
   char str2[1000] = {0};
-  //char *format = "%+-20e %010.*e %-*.16e %#025.10e %*.*e %*.15e %#010.*e %25.16e";
+  // char *format = "%+-20e %010.*e %-*.16e %#025.10e %*.*e %*.15e %#010.*e
+  // %25.16e";
 
-  int r1 = sprintf(str1, "%+-20e%010.*e%-*.16e%#025.10e%*.*e%*.15e%#010.*e%25.16e",
-  2543.43254, 10, 1012.34567, 15, -0.00123, 45678.342532, 10, 15,
-  11111.22, 16, -3245.3425342, 16, -0.00123, 235423424.43252);
-  int r2 = s21_sprintf(str2, "%+-20e%010.*e%-*.16e%#025.10e%*.*e%*.15e%#010.*e%25.16e",
-  2543.43254, 10, 1012.34567, 15, -0.00123, 45678.342532, 10, 15,
-  11111.22, 16, -3245.3425342, 16, -0.00123, 235423424.43252);
-
+  int r1 =
+      sprintf(str1, "%+-20e%010.*e%-*.16e%#025.10e%*.*e%*.15e%#010.*e%25.16e",
+              2543.43254, 10, 1012.34567, 15, -0.00123, 45678.342532, 10, 15,
+              11111.22, 16, -3245.3425342, 16, -0.00123, 235423424.43252);
+  int r2 = s21_sprintf(
+      str2, "%+-20e%010.*e%-*.16e%#025.10e%*.*e%*.15e%#010.*e%25.16e",
+      2543.43254, 10, 1012.34567, 15, -0.00123, 45678.342532, 10, 15, 11111.22,
+      16, -3245.3425342, 16, -0.00123, 235423424.43252);
 
   // int r1 = sprintf(str1, "%-*.16e %#010.*e",
   // 15, -0.00123, 16, 0.00123);
   // int r2 = s21_sprintf(str2, "%-*.16e %#010.*e",
   // 15, -0.00123, 16, 0.00123);
 
-  //ck_assert_str_eq(str1, str2);
+  // ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
 END_TEST
@@ -2595,11 +2606,13 @@ START_TEST(s21_sprintf_test_E) {
   char str1[1000] = {0};
   char str2[1000] = {0};
   int r1 = sprintf(str1, "%+-25.4E%25.*E%-*.10E%#02.E%*.*E%*.15E%*E%12.16E",
-  3456.4325, 10, 23452.43242, 5, -0.05234, 25.432523432, 10, 2, 53242.4242,
-  10, 456789.43242, 25, 1111122222.34567899, 2345678.23453242);
+                   3456.4325, 10, 23452.43242, 5, -0.05234, 25.432523432, 10, 2,
+                   53242.4242, 10, 456789.43242, 25, 1111122222.34567899,
+                   2345678.23453242);
   int r2 = s21_sprintf(str2, "%+-25.4E%25.*E%-*.10E%#02.E%*.*E%*.15E%*E%12.16E",
-  3456.4325, 10, 23452.43242, 5, -0.05234, 25.432523432, 10, 2, 53242.4242,
-  10, 456789.43242, 25, 1111122222.34567899, 2345678.23453242);
+                       3456.4325, 10, 23452.43242, 5, -0.05234, 25.432523432,
+                       10, 2, 53242.4242, 10, 456789.43242, 25,
+                       1111122222.34567899, 2345678.23453242);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2608,12 +2621,16 @@ END_TEST
 START_TEST(s21_sprintf_test_f) {
   char str1[1000] = {0};
   char str2[1000] = {0};
-  int r1 = sprintf(str1, "%+-10.5f%+10.2f%15.16f%+*.10f%*.16f%-10.*f%25.*f%25.f%#+10.f%*.*f",
-  2546.4324, 3452.4325, 5678.43256, 25, 456789.243242, 10, 3456789123.43245, 2, 12345.6788,
-  1, 34.4325432, 4325678.43242, 34567.2345432, 10, 2, 34567.43244);
-  int r2 = s21_sprintf(str2, "%+-10.5f%+10.2f%15.16f%+*.10f%*.16f%-10.*f%25.*f%25.f%#+10.f%*.*f",
-  2546.4324, 3452.4325, 5678.43256, 25, 456789.243242, 10, 3456789123.43245, 2, 12345.6788,
-  1, 34.4325432, 4325678.43242, 34567.2345432, 10, 2, 34567.43244);
+  int r1 = sprintf(
+      str1, "%+-10.5f%+10.2f%15.16f%+*.10f%*.16f%-10.*f%25.*f%25.f%#+10.f%*.*f",
+      2546.4324, 3452.4325, 5678.43256, 25, 456789.243242, 10, 3456789123.43245,
+      2, 12345.6788, 1, 34.4325432, 4325678.43242, 34567.2345432, 10, 2,
+      34567.43244);
+  int r2 = s21_sprintf(
+      str2, "%+-10.5f%+10.2f%15.16f%+*.10f%*.16f%-10.*f%25.*f%25.f%#+10.f%*.*f",
+      2546.4324, 3452.4325, 5678.43256, 25, 456789.243242, 10, 3456789123.43245,
+      2, 12345.6788, 1, 34.4325432, 4325678.43242, 34567.2345432, 10, 2,
+      34567.43244);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2625,9 +2642,10 @@ START_TEST(s21_sprintf_test_o) {
   unsigned short h = 253;
   unsigned long l = 4325234324242l;
   int r1 = sprintf(str1, "%-25.10o%-10o%#-30.2o%#*.10o%#*.*o%25.*o%#.10ho%*lo",
-  12345, 6532, 43522, 10, 64342, 15, 2, 343, 6, 678, h, 10, l);
-  int r2 = s21_sprintf(str2, "%-25.10o%-10o%#-30.2o%#*.10o%#*.*o%25.*o%#.10ho%*lo",
-  12345, 6532, 43522, 10, 64342, 15, 2, 343, 6, 678, h, 10, l);
+                   12345, 6532, 43522, 10, 64342, 15, 2, 343, 6, 678, h, 10, l);
+  int r2 =
+      s21_sprintf(str2, "%-25.10o%-10o%#-30.2o%#*.10o%#*.*o%25.*o%#.10ho%*lo",
+                  12345, 6532, 43522, 10, 64342, 15, 2, 343, 6, 678, h, 10, l);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2638,14 +2656,16 @@ START_TEST(s21_sprintf_test_x) {
   char str2[1000] = {0};
   unsigned short h = 345;
   unsigned long l = 52342353242l;
-  int r1 =
-  sprintf(str1,
-  "%x%-25x%#10x%#-10x%#10.5x%-25.34x%#-10.2x%*.*x%#*.10x%20.*x%#10.*x%*.5hx%10.25lx",
-  235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15, 3452, 8, 23452, 10, 34254, 3, 33334, 10, h, l);
-  int r2 =
-  s21_sprintf(str2,
-  "%x%-25x%#10x%#-10x%#10.5x%-25.34x%#-10.2x%*.*x%#*.10x%20.*x%#10.*x%*.5hx%10.25lx",
-  235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15, 3452, 8, 23452, 10, 34254, 3, 33334, 10, h, l);
+  int r1 = sprintf(str1,
+                   "%x%-25x%#10x%#-10x%#10.5x%-25.34x%#-10.2x%*.*x%#*.10x%20.*"
+                   "x%#10.*x%*.5hx%10.25lx",
+                   235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15, 3452,
+                   8, 23452, 10, 34254, 3, 33334, 10, h, l);
+  int r2 = s21_sprintf(str2,
+                       "%x%-25x%#10x%#-10x%#10.5x%-25.34x%#-10.2x%*.*x%#*.10x%"
+                       "20.*x%#10.*x%*.5hx%10.25lx",
+                       235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15,
+                       3452, 8, 23452, 10, 34254, 3, 33334, 10, h, l);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2656,13 +2676,16 @@ START_TEST(s21_sprintf_test_X) {
   char str2[1000] = {0};
   unsigned short h = 234;
   unsigned long l = 4325243132l;
-  int r1 =
-  sprintf(str1, "%X%-10X%15X%#-15X%#20.3X%-30.12X%#-12.3X%*.*X%#*.15X%21.*X%#12.*X%*.8hx%14.12lX",
-  235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15, 3452, 8, 23452, 10, 34254, 3, 33334, 10, h, l);
-  int r2 =
-  s21_sprintf
-  (str2, "%X%-10X%15X%#-15X%#20.3X%-30.12X%#-12.3X%*.*X%#*.15X%21.*X%#12.*X%*.8hx%14.12lX",
-  235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15, 3452, 8, 23452, 10, 34254, 3, 33334, 10, h, l);
+  int r1 = sprintf(str1,
+                   "%X%-10X%15X%#-15X%#20.3X%-30.12X%#-12.3X%*.*X%#*.15X%21.*X%"
+                   "#12.*X%*.8hx%14.12lX",
+                   235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15, 3452,
+                   8, 23452, 10, 34254, 3, 33334, 10, h, l);
+  int r2 = s21_sprintf(str2,
+                       "%X%-10X%15X%#-15X%#20.3X%-30.12X%#-12.3X%*.*X%#*.15X%"
+                       "21.*X%#12.*X%*.8hx%14.12lX",
+                       235, 1234, 3456, 12345, 222234, 68432, 34567, 10, 15,
+                       3452, 8, 23452, 10, 34254, 3, 33334, 10, h, l);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2673,10 +2696,14 @@ START_TEST(s21_sprintf_test_u) {
   char str2[1000] = {0};
   unsigned short h = 115;
   unsigned long l = 123325242342l;
-  int r1 = sprintf(str1, "%u%15u%-20u%010u%-15.10u%20.*u%*.*u%*.10u%-20.12lu%19hu",
-  4321u, 34567u, 2342u, 12346u, 234542u, 10, 234523u, 10, 5, 2345u, 20, 2432u, l, h);
-  int r2 = s21_sprintf(str2, "%u%15u%-20u%010u%-15.10u%20.*u%*.*u%*.10u%-20.12lu%19hu",
-  4321u, 34567u, 2342u, 12346u, 234542u, 10, 234523u, 10, 5, 2345u, 20, 2432u, l, h);
+  int r1 =
+      sprintf(str1, "%u%15u%-20u%010u%-15.10u%20.*u%*.*u%*.10u%-20.12lu%19hu",
+              4321u, 34567u, 2342u, 12346u, 234542u, 10, 234523u, 10, 5, 2345u,
+              20, 2432u, l, h);
+  int r2 = s21_sprintf(
+      str2, "%u%15u%-20u%010u%-15.10u%20.*u%*.*u%*.10u%-20.12lu%19hu", 4321u,
+      34567u, 2342u, 12346u, 234542u, 10, 234523u, 10, 5, 2345u, 20, 2432u, l,
+      h);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2686,14 +2713,13 @@ START_TEST(s21_sprintf_test_s) {
   char str1[1000] = {0};
   char str2[1000] = {0};
   char s[10] = {'h', 'e', 'l', 'l', 'o'};
-  int r1 = sprintf(str1,
-  "%s%23s%-15s%10.s%15.2s%16.*s%*.*s%*s%15s%15.3s",
-  "aboba", "helloworld", "ABOBA", "ABOBBAAA", "AAABOBA", 10, "QWERTY",
-  15, 4, "AAAAABOOOOOBAAA", 10, "ABOBAAAAA", s, s);
-  int r2 = s21_sprintf(str2,
-  "%s%23s%-15s%10.s%15.2s%16.*s%*.*s%*s%15s%15.3s",
-  "aboba", "helloworld", "ABOBA", "ABOBBAAA", "AAABOBA", 10, "QWERTY",
-  15, 4, "AAAAABOOOOOBAAA", 10, "ABOBAAAAA", s, s);
+  int r1 = sprintf(str1, "%s%23s%-15s%10.s%15.2s%16.*s%*.*s%*s%15s%15.3s",
+                   "aboba", "helloworld", "ABOBA", "ABOBBAAA", "AAABOBA", 10,
+                   "QWERTY", 15, 4, "AAAAABOOOOOBAAA", 10, "ABOBAAAAA", s, s);
+  int r2 =
+      s21_sprintf(str2, "%s%23s%-15s%10.s%15.2s%16.*s%*.*s%*s%15s%15.3s",
+                  "aboba", "helloworld", "ABOBA", "ABOBBAAA", "AAABOBA", 10,
+                  "QWERTY", 15, 4, "AAAAABOOOOOBAAA", 10, "ABOBAAAAA", s, s);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2702,14 +2728,14 @@ END_TEST
 START_TEST(s21_sprintf_test_p) {
   char str1[1000] = {0};
   char str2[1000] = {0};
-  void *p1 = (void*)0x123456789;
-  void *p2 = (void*)4325234;
-  void *p3 = (void*)0x123f324b;
-  void *p4 = (void*)432520;
-  int r1 = sprintf(str1, "%p%20p%-15p%10p%-15p%*p%10p%*p",
-  p1, p2, p3, p4, p2, 10, p3, p1, 10, p4);
-  int r2 = s21_sprintf(str2, "%p%20p%-15p%10p%-15p%*p%10p%*p",
-  p1, p2, p3, p4, p2, 10, p3, p1, 10, p4);
+  void *p1 = (void *)0x123456789;
+  void *p2 = (void *)4325234;
+  void *p3 = (void *)0x123f324b;
+  void *p4 = (void *)432520;
+  int r1 = sprintf(str1, "%p%20p%-15p%10p%-15p%*p%10p%*p", p1, p2, p3, p4, p2,
+                   10, p3, p1, 10, p4);
+  int r2 = s21_sprintf(str2, "%p%20p%-15p%10p%-15p%*p%10p%*p", p1, p2, p3, p4,
+                       p2, 10, p3, p1, 10, p4);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2728,8 +2754,16 @@ END_TEST
 START_TEST(s21_sprintf_test_g) {
   char str1[1000] = {0};
   char str2[1000] = {0};
-  int r1 = sprintf(str1, "%g  %23g  %-10g  %015g  %#10.4g  %0#15.10g  %+10.6g  %#*.g  %-10.*g", 2345.4324, 23445.2342, 1234.234242, 3456.3424, 0.00001234, -324234.234, 2345.4234, 5, 23456.4324, 9, 234567.43242);
-  int r2 = s21_sprintf(str2, "%g  %23g  %-10g  %015g  %#10.4g  %0#15.10g  %+10.6g  %#*.g  %-10.*g", 2345.4324, 23445.2342, 1234.234242, 3456.3424, 0.00001234, -324234.234, 2345.4234, 5, 23456.4324, 9, 234567.43242);
+  int r1 = sprintf(
+      str1,
+      "%g  %23g  %-10g  %015g  %#10.4g  %0#15.10g  %+10.6g  %#*.g  %-10.*g",
+      2345.4324, 23445.2342, 1234.234242, 3456.3424, 0.00001234, -324234.234,
+      2345.4234, 5, 23456.4324, 9, 234567.43242);
+  int r2 = s21_sprintf(
+      str2,
+      "%g  %23g  %-10g  %015g  %#10.4g  %0#15.10g  %+10.6g  %#*.g  %-10.*g",
+      2345.4324, 23445.2342, 1234.234242, 3456.3424, 0.00001234, -324234.234,
+      2345.4234, 5, 23456.4324, 9, 234567.43242);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
@@ -2738,27 +2772,26 @@ END_TEST
 START_TEST(s21_sprintf_test_G) {
   char str1[1000] = {0};
   char str2[1000] = {0};
-  int r1 =
-  sprintf(str1, "%G %#-15G%017G%#05.2G%#010.16G%+#8.6G%*.8G%#-10.*G%+#12.16G%*.*G",
-  43242.43242, 0000.1234, -34252.43242, 1234.5 , 111.432534243243242, 4324.43242,
-  25, -3213.43242, 16, -43.43242353242342, 111.24324242, 25, 5, 0.000000342);
-  int r2 =
-  s21_sprintf(str2, "%G %#-15G%017G%#05.2G%#010.16G%+#8.6G%*.8G%#-10.*G%+#12.16G%*.*G",
-  43242.43242, 0000.1234, -34252.43242, 1234.5 , 111.432534243243242, 4324.43242,
-  25, -3213.43242, 16, -43.43242353242342, 111.24324242, 25, 5, 0.000000342);
+  int r1 = sprintf(
+      str1, "%G %#-15G%017G%#05.2G%#010.16G%+#8.6G%*.8G%#-10.*G%+#12.16G%*.*G",
+      43242.43242, 0000.1234, -34252.43242, 1234.5, 111.432534243243242,
+      4324.43242, 25, -3213.43242, 16, -43.43242353242342, 111.24324242, 25, 5,
+      0.000000342);
+  int r2 = s21_sprintf(
+      str2, "%G %#-15G%017G%#05.2G%#010.16G%+#8.6G%*.8G%#-10.*G%+#12.16G%*.*G",
+      43242.43242, 0000.1234, -34252.43242, 1234.5, 111.432534243243242,
+      4324.43242, 25, -3213.43242, 16, -43.43242353242342, 111.24324242, 25, 5,
+      0.000000342);
   ck_assert_str_eq(str1, str2);
   ck_assert_int_eq(r1, r2);
 }
 END_TEST
 
-
-
 Suite *suite_s21_sprintf(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
 
-
-TCase *test_case_1 = tcase_create("s21_string");
+  TCase *test_case_1 = tcase_create("s21_string");
   suite_add_tcase(suite, test_case_1);
 
   tcase_add_test(test_case_1, s21_sprintf_test1);
@@ -2964,7 +2997,6 @@ TCase *test_case_1 = tcase_create("s21_string");
   tcase_add_test(test_case_1, other_sprintf_171);
   tcase_add_test(test_case_1, other_sprintf_172);
   tcase_add_test(test_case_1, other_sprintf_173);
-
 
   return suite;
 }

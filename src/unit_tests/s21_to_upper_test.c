@@ -40,12 +40,9 @@ START_TEST(s21_to_upper5_func) {
 }
 END_TEST
 
-
-
 Suite *suite_s21_upper(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
-
 
   TCase *tc_to_upper = tcase_create("to_upper_func");
   suite_add_tcase(suite, tc_to_upper);
@@ -54,7 +51,6 @@ Suite *suite_s21_upper(void) {
   tcase_add_test(tc_to_upper, s21_to_upper3_func);
   tcase_add_test(tc_to_upper, s21_to_upper4_func);
   tcase_add_test(tc_to_upper, s21_to_upper5_func);
-
 
   return suite;
 }

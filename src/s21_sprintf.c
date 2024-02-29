@@ -280,7 +280,6 @@ void sprintf_hl_str(char *string_from_cs, unsigned long long number,
 
 void sprintf_float_str(char *string_from_cs, long double number,
                        format_part *parameters) {
-  
   long double left = 0;
   long double right = 0;
   right = modfl(number, &left);
@@ -300,18 +299,17 @@ void sprintf_float_str(char *string_from_cs, long double number,
     long double rounded_number =
         roundl(number * pow(10, parameters->precision)) /
         pow(10, parameters->precision);
-        
+
     rounded_number += pow(10, -1 * (parameters->precision + 20));
-    
-    
+
     right = modfl(rounded_number, &left);
-    
+
     sprintf_int_str(parameters, string_from_cs, left);
     s21_strcat(string_from_cs, ".");
-    
-    //long double r_right = roundl(right * pow(10, parameters->precision));
+
+    // long double r_right = roundl(right * pow(10, parameters->precision));
     long double r_right = rint(right * pow(10, parameters->precision));
-    
+
     int zero_after_dot = 0;
     while (right < 1 && zero_after_dot < parameters->precision) {
       right *= 10;
@@ -799,13 +797,8 @@ void sprintf_make_sign(double number, format_part *parameters) {
   }
 }
 
-
-
-
-
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-

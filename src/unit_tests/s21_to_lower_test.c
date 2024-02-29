@@ -40,11 +40,9 @@ START_TEST(s21_to_lower5_func) {
 }
 END_TEST
 
-
 Suite *suite_s21_lower(void) {
   Suite *suite;
   suite = suite_create("Functions checking");
-
 
   TCase *tc_to_lower = tcase_create("to_lower_func");
   suite_add_tcase(suite, tc_to_lower);
@@ -53,7 +51,6 @@ Suite *suite_s21_lower(void) {
   tcase_add_test(tc_to_lower, s21_to_lower3_func);
   tcase_add_test(tc_to_lower, s21_to_lower4_func);
   tcase_add_test(tc_to_lower, s21_to_lower5_func);
-
 
   return suite;
 }
